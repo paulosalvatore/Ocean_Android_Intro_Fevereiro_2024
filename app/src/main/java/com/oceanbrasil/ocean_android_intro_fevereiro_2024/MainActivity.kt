@@ -1,5 +1,6 @@
 package com.oceanbrasil.ocean_android_intro_fevereiro_2024
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -37,6 +38,21 @@ class MainActivity : AppCompatActivity() {
                 // Atualização de texto do TextView
                 tvResultado.text = etNome.text
             }
+        }
+
+        // Abrir a Activity Resultado
+        // Registra a intenção (Intent) de abrir a tela no Android
+
+        val btAbrirNovaTela = findViewById<Button>(R.id.btAbrirNovaTela)
+
+        btAbrirNovaTela.setOnClickListener {
+            // Para abrir a Activity: Intent que sabe onde estamos e para onde vamos
+            //   -> De onde estamos: this (MainActivity)
+            //   -> Para onde vamos: ResultadoActivity::class.java
+            val resultadoIntent = Intent(this, ResultadoActivity::class.java)
+
+            // Inicia a tela a partir dessa Intent
+            startActivity(resultadoIntent)
         }
     }
 }
