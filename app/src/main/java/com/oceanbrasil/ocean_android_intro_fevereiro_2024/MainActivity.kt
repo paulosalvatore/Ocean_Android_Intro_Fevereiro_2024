@@ -51,6 +51,11 @@ class MainActivity : AppCompatActivity() {
             //   -> Para onde vamos: ResultadoActivity::class.java
             val resultadoIntent = Intent(this, ResultadoActivity::class.java)
 
+            // Adicionar dados à Intent (putExtra)
+            // -> Nome para a informação: NOME_DIGITADO
+            // -> Valor da informação: String obtido a partir de etNome.text
+            resultadoIntent.putExtra("NOME_DIGITADO", etNome.text.toString())
+
             // Inicia a tela a partir dessa Intent
             startActivity(resultadoIntent)
         }
