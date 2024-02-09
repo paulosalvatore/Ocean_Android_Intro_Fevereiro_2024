@@ -3,6 +3,7 @@ package com.oceanbrasil.ocean_android_intro_fevereiro_2024
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -20,13 +21,14 @@ class MainActivity : AppCompatActivity() {
         // val -> variável que inicia com um valor e esse valor nunca muda
         // var -> variável que iniciar com um valor e esse valor pode mudar
         val btEnviar = findViewById<Button>(R.id.btEnviar)
+        val etNome = findViewById<EditText>(R.id.etNome)
         val tvResultado = findViewById<TextView>(R.id.tvResultado)
 
         // Criar um Listener para o botão btEnviar
         btEnviar.setOnClickListener {
             // Dentro das chaves {}, o código será executado
             // quando o clique (toque) ocorrer no botão
-            tvResultado.text = "Paulo Salvatore!!"
+            tvResultado.text = etNome.text
         }
     }
 }
