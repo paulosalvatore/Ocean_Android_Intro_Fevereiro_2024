@@ -28,7 +28,14 @@ class MainActivity : AppCompatActivity() {
         btEnviar.setOnClickListener {
             // Dentro das chaves {}, o código será executado
             // quando o clique (toque) ocorrer no botão
-            tvResultado.text = etNome.text
+
+            if (etNome.text.isBlank()) {
+                // Exibir mensagem de erro
+                etNome.error = "Digite um nome válido!"
+            } else {
+                // Atualização de texto do TextView
+                tvResultado.text = etNome.text
+            }
         }
     }
 }
